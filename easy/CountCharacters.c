@@ -4,6 +4,7 @@
 int countCharacters(char ** words, int wordsSize, char * chars) {
     int len = strlen(chars);
     int chararray[26] = {0};
+	int wordsarray[26] = {0};
     int tmp = 0;
     int count = 0;
     int idx = 0;
@@ -13,9 +14,13 @@ int countCharacters(char ** words, int wordsSize, char * chars) {
         chararray[chars[i]-'a']++; // set nums of char(a-z);
     }
 
+    for (int i = 0; i < len; i++)
+    {
+		printf("chararray:%d \n", chararray[i]);
+    }
+
     for (int i = 0 ; i < wordsSize; i++)
     {
-        int wordsarray[26] = {0};
 
         while(words[i][idx] != 0 )
         {
@@ -37,7 +42,7 @@ int countCharacters(char ** words, int wordsSize, char * chars) {
 void main(void)
 {
     char *words[] = {"hello","world","leetcode"};
-    char *chars = "welldonehoneyr";
+    char *chars = "wellldonehoneyr";
     int wordsize = sizeof(words)/sizeof(char *);
     int ret;
 
